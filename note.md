@@ -1,15 +1,16 @@
 Dog Agility Training App
 
-Owner
+User
 belongs_to :dog
 has_many :trainings
+has_many :courses through: trainings
 username :string
 email :
 password
 
 
 Dog
-belongs_to owner
+belongs_to user
 has_many :trainings
 has_many :courses through: trainings
 name
