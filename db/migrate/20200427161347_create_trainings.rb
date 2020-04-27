@@ -1,7 +1,7 @@
 class CreateTrainings < ActiveRecord::Migration[6.0]
   def change
     create_table :trainings do |t|
-      t.datatime :data
+      t.datetime :date
       t.string :completed
       t.float :time
       t.string :benefit
