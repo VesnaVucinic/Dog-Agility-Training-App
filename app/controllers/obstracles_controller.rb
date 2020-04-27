@@ -1,0 +1,2 @@
+class ObstraclesController < ApplicationController
+end
