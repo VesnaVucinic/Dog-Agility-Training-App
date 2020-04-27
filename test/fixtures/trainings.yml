@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 
+  complete: MyString
+  time: MyString
+  benefit: MyString
+  course: one
+  dog: one
+
+two:
+  data: 
+  complete: MyString
+  time: MyString
+  benefit: MyString
+  course: two
+  dog: two
