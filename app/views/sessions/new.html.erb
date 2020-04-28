@@ -1,6 +1,10 @@
 <h1>Log In Here!</h1>
 
-<%= form_for :user do |f|%> <!--I change @user becouse will send me to users index page in :user to get post action as log in , it will not remember users credentials and pre file it, becouse secrity-->
+<% if flash[:message]%> <!--if I have flash message then I want to desplay flas message-->
+  <%= flash[:message] %>
+<% end %>
+
+<%= form_for :user do |f|%> <!--I change @user (becouse we not create new user and will send me to users index page) in :user to get post action as log in , it will not remember users credentials and pre file it, becouse secrity, -->
     <%= f.label :username %>
     <%= f.text_field :username %>
 
