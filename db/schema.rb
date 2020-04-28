@@ -57,15 +57,12 @@ ActiveRecord::Schema.define(version: 2020_04_27_161347) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.integer "dog_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["dog_id"], name: "index_users_on_dog_id"
   end
 
   add_foreign_key "dogs", "users"
   add_foreign_key "obstracles", "courses"
   add_foreign_key "trainings", "courses"
   add_foreign_key "trainings", "dogs"
-  add_foreign_key "users", "dogs"
 end
