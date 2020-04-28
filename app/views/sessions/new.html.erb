@@ -1,0 +1,11 @@
+<h1>Log In Here!</h1>
+
+<%= form_for :user do |f|%> <!--I change @user becouse will send me to users index page in :user to get post action as log in , it will not remember users credentials and pre file it, becouse secrity-->
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit "Log In" %>
+<% end %>
