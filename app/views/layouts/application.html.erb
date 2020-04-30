@@ -11,8 +11,15 @@
 
   <body>
 
-  <%= link_to 'Logout', '/logout', method: :delete, class:'button'%>
-
+      <%= link_to 'Logout', '/logout', method: :delete, class:'button'%>
+      <%= link_to 'Add a Dog', new_dog_path , class:'button'%>
+      <%= link_to 'My Dogs', dogs_path , class:'button'%>
+      <%= link_to 'Add a Obstracle', new_obstracle_path , class:'button'%>
+      <%= link_to 'All Obstracles', obstracles_path, class:'button' %>
+      <%= link_to 'Add a Course', new_course_path , class:'button'%>
+      <%= link_to 'All Courses', courses_path, class:'button' %>
+      <%= link_to 'Add a Training', new_training_path, class:'button' %>
+      <%= link_to 'My Trainings', trainings_path, class:'button' %>
     <%= yield %>
   </body>
 </html>
