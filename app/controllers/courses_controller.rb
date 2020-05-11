@@ -10,5 +10,12 @@ class CoursesController < ApplicationController
     end
 
     def create
+        @course = Course.new(course_params)
+    end
+
+    private
+
+    def course_params
+        params.require(:course).permit(:description, :location)
     end
 end
