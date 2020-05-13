@@ -1,0 +1,25 @@
+<h1>Add a New Dog</h1>
+<%= form_for @dog do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+    <br></br>
+
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  <br></br>
+
+  <%= f.label :breed %>
+  <%= f.text_field :breed %>
+    <br></br>
+
+  
+  <%= f.label :category %>
+  <%= f.select :category,options_for_select(["large", "intermediate", "medium", "small"]), include_blank: true  %>
+  <!--f.select is used when I am setting few certain options but that options aren't sttored in database, by hand I say I want this 6 things to be my options-->
+    <br></br>
+
+  <%= f.submit%>
+
+<% end %>
