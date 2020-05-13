@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
 
     def index
+        @courses = Course.all
     end
 
     def show
@@ -12,9 +13,9 @@ class CoursesController < ApplicationController
     end
 
     def create
-        @course = current_user.course.build(course_params)
+        @course = current_user.courses.build(course_params)
         if @course.save
-            recirect_to course_path(@course) #any time it's gonna form a URL that need dynamic raut and ID I need instance variable
+            redirect_to course_path(@course) #any time it's gonna form a URL that need dynamic raut and ID I need instance variable
         else
             render :new
         end    

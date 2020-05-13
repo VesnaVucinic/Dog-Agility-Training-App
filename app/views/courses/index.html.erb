@@ -1,0 +1,15 @@
+<h1>All Courses</h1>
+
+<ul>
+<% @courses.each do |course| %>
+<li>
+  <%=course.location %>  
+  <%=course.description %> - added by: <%= course.user.username %> <br><br>
+  <%= link_to "See all training sessions", course_trainings_path(course)%> |
+  <%= link_to "Add a training session", new_course_training_path(course)%> |
+ 
+
+</li>
+
+<% end %>
+</ul>
