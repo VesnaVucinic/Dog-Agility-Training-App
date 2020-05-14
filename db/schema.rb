@@ -15,10 +15,8 @@ ActiveRecord::Schema.define(version: 2020_04_27_161347) do
   create_table "courses", force: :cascade do |t|
     t.string "description"
     t.string "location"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
   create_table "dogs", force: :cascade do |t|
@@ -26,10 +24,8 @@ ActiveRecord::Schema.define(version: 2020_04_27_161347) do
     t.integer "age"
     t.string "breed"
     t.string "category"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
   create_table "obstracles", force: :cascade do |t|
@@ -47,12 +43,12 @@ ActiveRecord::Schema.define(version: 2020_04_27_161347) do
     t.string "completed"
     t.float "time"
     t.string "benefit"
-    t.integer "course_id", null: false
+    t.integer "user_id", null: false
     t.integer "dog_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["course_id"], name: "index_trainings_on_course_id"
     t.index ["dog_id"], name: "index_trainings_on_dog_id"
+    t.index ["user_id"], name: "index_trainings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,9 +59,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_161347) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "courses", "users"
-  add_foreign_key "dogs", "users"
   add_foreign_key "obstracles", "courses"
-  add_foreign_key "trainings", "courses"
   add_foreign_key "trainings", "dogs"
+  add_foreign_key "trainings", "users"
 end

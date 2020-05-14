@@ -1,18 +1,18 @@
 Dog Agility Training App
 
 User
-belongs_to :dog
+has_many :dogs through: trainings
 has_many :trainings
-has_many :courses through: trainings
+has_many :courses 
 username :string
 email :
 password
 
 
 Dog
-belongs_to user
+has_many users through: trainings
 has_many :trainings
-has_many :courses through: trainings
+has_many :courses 
 name
 age
 breed
@@ -35,7 +35,7 @@ Image_url :string
 
 
 Training
-belongs_to :course
+belongs_to :user
 belongs_to :dog
 Data :datatime
 Complete: boolean, default false  

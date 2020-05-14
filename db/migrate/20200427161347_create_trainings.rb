@@ -5,7 +5,7 @@ class CreateTrainings < ActiveRecord::Migration[6.0]
       t.string :completed
       t.float :time
       t.string :benefit
-      t.belongs_to :course, null: false, foreign_key: true
+      t.belongs_to :user, null: false, foreign_key: true
       t.belongs_to :dog, null: false, foreign_key: true
 
       t.timestamps

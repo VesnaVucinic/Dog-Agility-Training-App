@@ -5,7 +5,7 @@ class CreateDogs < ActiveRecord::Migration[6.0]
       t.integer :age
       t.string :breed
       t.string :category
-      t.belongs_to :user, null: false, foreign_key: true
+      
 
       t.timestamps
     end

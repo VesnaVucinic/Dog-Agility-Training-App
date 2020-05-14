@@ -1,5 +1,5 @@
 class Dog < ApplicationRecord
-  belongs_to :user
- # has_many :trainings
- # has_many :courses, through: trainings
+  has_many :users, through: :trainings
+  has_many :trainings
+  has_many :courses, through: :trainings
 end
