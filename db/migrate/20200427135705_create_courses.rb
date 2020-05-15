@@ -3,9 +3,8 @@ class CreateCourses < ActiveRecord::Migration[6.0]
     create_table :courses do |t|
       t.string :description
       t.string :location
+      t.belongs_to :user, null: false, foreign_key: true
       
-
-
       t.timestamps
     end
   end
